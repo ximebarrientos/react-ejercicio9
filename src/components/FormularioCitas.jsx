@@ -119,7 +119,7 @@ const FormularioCitas = () => {
             {errors.sintomas?.message}
           </Form.Text>
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="info" type="submit">
           Agregar nueva cita
         </Button>
       </Form>
