@@ -10,7 +10,7 @@ const CardCita = ({cita, borrarCita}) => {
             <br/>
             <b>Sintomas:</b> {cita.sintomas}
           </Card.Text>
-          <Button variant="danger" onClick={()=>borrarCita(cita)}>Borrar</Button>
+          <Button variant="danger" onClick={()=>borrarCita(cita.id)}>Borrar</Button>
         </Card.Body>
       </Card>
     </Col>

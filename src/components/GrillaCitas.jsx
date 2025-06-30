@@ -6,7 +6,7 @@ const GrillaCitas = ({citas, borrarCita}) => {
     <div>
       <Row xs={1} md={2} lg={4} className="row-gap-2 mt-4">
         {
-            citas.map((cita,indice)=><CardCita key={indice} cita={cita} borrarCita={borrarCita}></CardCita>)
+            citas.map((cita)=><CardCita key={cita.id} cita={cita} borrarCita={borrarCita}></CardCita>)
         }
         
       </Row>
