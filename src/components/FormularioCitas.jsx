@@ -15,6 +15,12 @@ const FormularioCitas = () => {
     setCitas([...citas, datos]);
     reset();
   };
+  const borrarCita=(nombreCita)=>{
+    //filtrar el state citas
+    const citasFiltradas=citas.filter((itemCita)=>itemCita!==nombreCita)
+    //actualizamos state
+    setCitas(citasFiltradas)
+  }
 
   return (
     <section>
@@ -117,7 +123,7 @@ const FormularioCitas = () => {
           Agregar nueva cita
         </Button>
       </Form>
-      <GrillaCitas citas={citas}></GrillaCitas>
+      <GrillaCitas citas={citas} borrarCita={borrarCita}></GrillaCitas>
     </section>
   );
 };
