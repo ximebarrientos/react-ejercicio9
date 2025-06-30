@@ -2,6 +2,7 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import GrillaCitas from "./GrillaCitas";
+import { v4 as uuidv4 } from "uuid";
 
 const FormularioCitas = () => {
   const [citas, setCitas] = useState([]);
@@ -11,16 +12,18 @@ const FormularioCitas = () => {
     reset,
     formState: { errors },
   } = useForm();
+
   const crearCita = (datos) => {
+    datos.id=uuidv4()
     setCitas([...citas, datos]);
     reset();
   };
-  const borrarCita=(nombreCita)=>{
+  const borrarCita = (nombreCita) => {
     //filtrar el state citas
-    const citasFiltradas=citas.filter((itemCita)=>itemCita!==nombreCita)
+    const citasFiltradas = citas.filter((itemCita) => itemCita !== nombreCita);
     //actualizamos state
-    setCitas(citasFiltradas)
-  }
+    setCitas(citasFiltradas);
+  };
 
   return (
     <section>
