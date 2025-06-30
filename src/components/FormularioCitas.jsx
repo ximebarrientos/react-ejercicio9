@@ -18,9 +18,9 @@ const FormularioCitas = () => {
     setCitas([...citas, datos]);
     reset();
   };
-  const borrarCita = (nombreCita) => {
+  const borrarCita = (idCita) => {
     //filtrar el state citas
-    const citasFiltradas = citas.filter((itemCita) => itemCita !== nombreCita);
+    const citasFiltradas = citas.filter((cita) => cita.id !== idCita);
     //actualizamos state
     setCitas(citasFiltradas);
   };
